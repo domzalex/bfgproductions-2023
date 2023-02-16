@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./static/stylesheets/style.css" type="text/css">
+  </head>
+  <body>
+    <%- include('nav'); -%>
+    <div class="main-container">
+      
+        <div class="weekly-events">
+          <h1>Weekly Events</h1>
+          <form class="list-header" action="/weekly" method="post">
+            <input class="eventInput" type="text" name="name" placeholder="Name">
+            <input class="eventInput" type="text" name="date" placeholder="Day of Week">
+            <input class="eventInput" type="text" name="time" placeholder="Time">
+            <input class="eventInput" type="text" name="location" placeholder="Location">
+
+            <button type="submit" disabled style="display: none;" aria-hidden="true"></button>
+            <button type="submit" name="button" class="submitButton">submit</button>
+          </form>
+
+          <div class="all-weekly-events">
+            <% weeklies.forEach(details => { %>
+              <ul class="weekly-entry">
+                <li class="name"><%= details.name %><br /></li>
+                <li class="date"><%= details.date %><br /></li>
+                <li class="time"><%= details.time %><br /></li>
+                <li class="location"><%= details.location %><br /></li>
+                <a href="/weekly/edit/<%= details._id %>" class="edit">edit /</a><a href="/weekly/remove/<%= details._id %>" class="remove"> remove</a>
+              </ul>
+              <% }) %>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

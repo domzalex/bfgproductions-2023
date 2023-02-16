@@ -1,0 +1,31 @@
+{
+    "env": {
+		"node": true,
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+		"prettier",
+        "plugin:react/recommended"
+    ],
+    "overrides": [
+		{
+			"files": ["src/*.js"],
+			"parserOptions": {
+				"sourceType": "module"
+			}
+		}
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "plugins": [
+        "react"
+    ],
+	//ignoring for now to look into global TypeScript conversion
+    "rules": {
+		"react/prop-types": "off"
+    }
+}

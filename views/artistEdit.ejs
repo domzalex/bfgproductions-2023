@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
+  </head>
+  <body>
+    <%- include('nav'); -%>
+    <div class="main-container">
+        <h1>Add to the artist list</h1>
+        <form class="list-header" action="/list" method="post">
+          <input class="eventInput" type="text" name="name" placeholder="name">
+          <button type="submit" disabled style="display: none;" aria-hidden="true"></button>
+          <button type="submit" name="button" class="submitButton">submit</button>
+        </form>
+        <div class="all-artists">
+          <% artist.forEach(details => { %>
+            <ul class="listEntry">
+              <% if (details._id == artistId) { %>
+              <form class="editForm" action="/artist/edit/<%= details._id %>" method="POST">
+              <li class="name"><input class="eventNameEdit" type="text" value="<%= details.name %>" name="name" placeholder="name"></li>
+              <div class="subCan">
+                <button class="addEvent" type="submit">confirm</button><a href="/artist" class="cancel">cancel</a>
+              </div>
+              </form>
+              <% } else { %>
+              <li class="name"><%= details.name %></li>
+              <a href="/artist/edit/<%= details._id %>" class="edit">edit /</a><a href="/artist/remove/<%= details._id %>" class="remove"> remove</a>
+              <% } %>
+            </ul>
+          <% }) %>
+        </div>
+    </div>
+  </body>
+</html>

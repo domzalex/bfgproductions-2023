@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./static/stylesheets/style.css" type="text/css">
+  </head>
+  <body>
+    <%- include('nav'); -%>
+    <div class="main-container">
+      
+        <div class="main-calendar">
+          <h1>Main Calendar</h1>
+          <form class="list-header" action="/list" method="post">
+            <input list="common-names" class="eventInput" type="text" name="name" placeholder="Name">
+            <datalist id="common-names">
+              <option value="Grateful Dan"></option>
+              <option value="Grateful Dan Duo"></option>
+              <option value="Chad Honea"></option>
+              <option value="Jive Revival"></option>
+              <option value="The B.F.G. Trio"></option>
+              <option value="The B.F.G. Trio w/Grateful Dan"></option>
+            </datalist>
+            <input class="eventInput" type="date" name="date" placeholder="Date">
+            <input class="eventInput" type="text" name="time" placeholder="Time">
+            <input list="common-locations" class="eventInput" type="text" name="location" placeholder="Location">
+            <datalist id="common-locations">
+              <option value="Abbott's Bar & Grill - John's Creek, GA"></option>
+              <option value="NoFo Brewing Co. - Cumming, GA"></option>
+              <option value="Monkey Wrench Brewing - Suwanee, GA"></option>
+              <option value="Porter Brew & Cue - Dunwoody, GA"></option>
+              <option value="Fish Tales Grill - Flowery Branch, GA"></option>
+              <option value="Pig Tales Grill - Flowery Branch, GA"></option>
+              <option value="International Bar & Grill - Athens, GA"></option>
+              <option value="Wild Wing Café - Gainesville, GA"></option>
+              <option value="Wild Wing Café - Cumming, GA"></option>
+              <option value="Wild Wing Café - Alpharetta, GA"></option>
+            </datalist>
+            <button type="submit" disabled style="display: none;" aria-hidden="true"></button>
+            <button type="submit" name="button" class="submitButton">submit</button>
+          </form>
+          <div class="all-events">
+            <% events.forEach(details => { %>
+              <% let formatDate = details.date.toLocaleDateString('en-us', { weekday:"short", year:"numeric", month:"short", day:"numeric"}) %>
+              <% let time = ' - ' + details.time %>
+              <ul class="listEntry">
+                <li class="name"><%= details.name %><br /></li>
+                <li class="date"><%= formatDate + time %><br /></li>
+                <li class="location"><%= details.location %><br /></li>
+                <a href="/list/edit/<%= details._id %>" class="edit">edit /</a><a href="/list/remove/<%= details._id %>" class="remove"> remove</a>
+              </ul>
+              <% }) %>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

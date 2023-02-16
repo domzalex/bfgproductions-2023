@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');
+
+*,
+*::after,
+*::before {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', serif;
+}
+
+/****************/
+/** NAV STYING **/
+/****************/
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    z-index: 3;
+    font-family: 'Lato', serif;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-link-group {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.nav-link {
+    position: relative;
+    color: white;
+    font-family: 'Lato', serif;
+    font-size: 1em;
+    margin: 0 2.5em;
+    cursor: pointer;
+}
+.home-link {
+    font-size: 1.25em;
+}
+.nav-link::after,
+.footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    opacity: 0;
+    transition: 0.2s ease;
+}
+.nav-link:hover::after,
+.footer a:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+.inactive {
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/*******************/
+/** FOOTER STYING **/
+/*******************/
+.footer {
+    padding: 0 3em;
+    height: 175px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: solid 1px rgb(20, 20, 20);
+}
+.socials,
+.contact {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.footer a {
+    position: relative;
+    color: white;
+    font-family: 'Lato', serif;
+    font-size: 1em;
+    text-decoration: none;
+}
+.footer-img {
+    height: 50px;
+}
+
+/*****************/
+/** HERO STYING **/
+/*****************/
+.home-hero {
+    width: 100vw;
+    height: 70vh;
+    background: url('./img/bg1.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-header {
+    color: white;
+    font-family: 'Lato', serif;
+    font-size: 7em;
+    text-align: center;
+}
+
+.event-container {
+    height: 70vh;
+    width: 100vw;
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+}
+.inner-event-container {
+    width: 200vw;
+    display: flex;
+    align-items: center;
+    transition: 1s ease;
+}
+.main-event-header {
+    display: flex;
+    transition: 1s ease;
+    border-bottom: solid 1px white;
+}
+.event-header-background {
+    width: 50vw;
+    height: 70px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1s ease;
+}
+.weekly-title,
+.main-title {
+    width: 100vw;
+    text-align: center;
+    line-height: 70px;
+    cursor: pointer;
+    z-index: 1;
+}
+.weekly-title:hover,
+.main-title:hover {
+    text-decoration: none;
+}
+.main-title {
+    color: white;
+    mix-blend-mode: difference;
+}
+.weekly-title {
+    color: white;
+    mix-blend-mode: difference;
+}
+
+/*********************/
+/** FEATURED STYING **/
+/*********************/
+.weekly-events {
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+.inner-event-container {
+    height: calc(70vh - 70px);
+}
+.weekly-list {
+    position: relative;
+    width: 95vw;
+    max-width: 1300px;
+    height: auto;
+    max-height: 80%;
+    border: solid 1px rgb(30, 30, 30);
+    border-radius: 5px;
+    overflow-y: scroll;
+    z-index: 2;
+    background-color: black;
+}
+.weekly-header {
+    border-bottom: solid 1px rgb(30, 30, 30);
+    background-color: rgb(20, 20, 20);
+    padding: 7px;
+    text-align: center;
+}
+.weekly-event-list {
+    display: flex;
+    flex-direction: column;
+}
+.weekly-event-list .weekly-date h1 {
+    padding: 10px;
+    font-size: 1.25em;
+    border-bottom: solid 1px rgb(30, 30, 30);
+}
+.weekly-event-list ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px rgb(30, 30, 30);
+    /* background-color: rgb(8, 8, 8); */
+}
+.weekly-date:nth-child(even) {
+    background-color: rgb(15, 15, 15);
+}
+.weekly-name-date {
+    display: flex;
+    width: 40%;
+}
+.weekly-event-list ul li {
+    padding: 15px 10px;
+}
+.weekly-name {
+    width: 100%;
+    border-right: solid 1px rgb(30, 30, 30);
+}
+.weekly-time {
+    width: 25%;
+    border-right: solid 1px rgb(30, 30, 30);
+    text-align: center;
+}
+.weekly-location {
+    width: 85%;
+    text-align: right;
+}
+
+/***************************/
+/** EVENT CALENDAR STYLES **/
+/***************************/
+.events-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: calc(70vh - 70px);
+    width: 100vw;
+    background-color: white;
+}
+.event-header {
+    font-family: 'Lato', serif;
+    font-size: 1.6em;
+    text-align: center;
+}
+.events-list {
+    position: relative;
+    width: 95vw;
+    max-width: 1300px;
+    height: auto;
+    max-height: 80%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: solid 1px rgba(20, 20, 20, 0.2);
+    border-top: solid 1px rgba(20, 20, 20, 0.2);
+    border-bottom: solid 1px rgba(20, 20, 20, 0.2);
+    overflow-y: scroll;
+}
+.all-events {
+    width: 100%;
+    overflow-y: scroll;
+}
+.event {
+    width: 100%;
+    max-width: 1920px;
+    list-style: none;
+    display: flex;
+    border-bottom: solid 1px rgba(20, 20, 20, 0.2);
+    font-family: 'Lato', serif;
+    font-weight: 500;
+    font-size: 1em;
+    color: rgb(20, 20, 20);
+}
+.event:nth-child(even) {
+    background-color: #f5f5f5;
+}
+.event:nth-last-child(-n + 1) {
+    border-bottom: none;
+}
+.event li {
+    padding: 15px 10px;
+}
+.event-name {
+    width: 35%;
+}
+.event-date {
+    width: 20%;
+    text-align: left;
+    border-right: solid 1px rgba(20, 20, 20, 0.2);
+}
+.event-location {
+    width: 45%;
+    text-align: right;
+}
+
+@media only screen and (max-width: 900px) {
+    .nav {
+        position: absolute;
+        justify-content: center;
+        padding: 10px;
+    }
+    .nav-link-group {
+        width: 95%;
+        justify-content: space-between;
+    }
+    .home-link {
+        display: none;
+    }
+    .nav-link {
+        font-size: 0.9em;
+        margin: 0;
+    }
+    .nav-link::after,
+    .footer a::after {
+        display: none;
+    }
+
+    .footer {
+        padding: 0 1em;
+        height: 75px;
+    }
+    .footer a {
+        font-size: 0.7em;
+    }
+    .footer-img {
+        display: none;
+    }
+
+    .home-hero {
+        height: 70vh;
+    }
+    .hero-header {
+        font-size: 3em;
+    }
+    .popout-container {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5px;
+    }
+    .artists-header {
+        font-size: 1.5em;
+        width: auto;
+        margin: 15px 0px;
+    }
+    .services-modal,
+    .artists-modal {
+        position: fixed;
+        width: 95vw;
+        height: 70vh;
+        overflow-y: scroll;
+        top: 8vh;
+        left: 2.5vw;
+    }
+    .modal-close {
+        position: sticky;
+        top: 5px;
+        left: 5px;
+        background-color: rgb(30, 30, 30);
+        border: solid 1px white;
+        width: 30px;
+        height: 30px;
+        z-index: 4;
+    }
+    .modal-close::after {
+        font-size: 30px;
+        line-height: 30px;
+        transform: translate(0.5px, -1px);
+    }
+    .services-group,
+    .artists-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .artist {
+        font-size: 1.2em;
+    }
+
+    .event-header-background {
+        height: 40px;
+    }
+    .weekly-title,
+    .main-title {
+        font-size: 1.2em;
+        line-height: 40px;
+    }
+
+    .weekly-events {
+        height: calc(80vh - 40px);
+    }
+    .weekly-header {
+        font-size: 0.8em;
+    }
+    .weekly-event {
+        display: flex;
+        flex-direction: column;
+    }
+    .weekly-name-date {
+        width: 100%;
+        display: flex;
+        border-top: solid 1px rgb(30, 30, 30);
+        order: 1;
+    }
+    .weekly-event-list h1 {
+        font-size: 0.8em;
+    }
+    .weekly-event-list ul li {
+        font-size: 0.8em;
+    }
+    .weekly-name {
+        width: 75%;
+        border-right: solid 1px rgb(30, 30, 30);
+    }
+    .weekly-time {
+        width: 25%;
+        border-right: solid 1px rgb(30, 30, 30);
+        text-align: center;
+    }
+    .weekly-location {
+        width: 100%;
+        text-align: left;
+    }
+
+    .events-container {
+        height: calc(80vh - 40px);
+    }
+    .event {
+        flex-direction: column;
+        border-bottom: solid 4px rgba(20, 20, 20, 0.2);
+        font-size: 0.7em;
+    }
+    .event li {
+        border-bottom: solid 1px rgba(20, 20, 20, 0.2);
+        padding: 10px;
+    }
+    .event-name {
+        width: 100%;
+    }
+    .event-date {
+        width: 100%;
+    }
+    .event-location {
+        width: 100%;
+        text-align: left;
+    }
+}
