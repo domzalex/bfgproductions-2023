@@ -9,7 +9,7 @@ const LocalStrategy = require('passport-local')
 
 const app = express()
 // const router = express.Router()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
 const User = require('./models/user')
 const Events = require('./models/events')
 const Weeklies = require('./models/weeklies')
