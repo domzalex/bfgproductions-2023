@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
+  </head>
+  <body>
+    <%- include('nav'); -%>
+    <div class="main-container">
+        <h1>Links</h1>
+        <div class="all-artists">
+          <% links.forEach(details => { %>
+            <ul class="listEntry">
+              <% if (details._id == linksId) { %>
+              <form class="editForm" action="/links/edit/<%= details._id %>" method="POST">
+              <li class="name"><input class="eventNameEdit" type="text" value="<%= details.link %>" name="link" placeholder="link"></li>
+              <div class="subCan">
+                <button class="addEvent" type="submit">confirm</button><a href="/links" class="cancel">cancel</a>
+              </div>
+              </form>
+              <% } else { %>
+              <li class="name"><%= details.name %></li>
+              <a href="/links/edit/<%= details._id %>" class="edit">edit /</a>
+              <% } %>
+            </ul>
+          <% }) %>
+        </div>
+    </div>
+  </body>
+</html>

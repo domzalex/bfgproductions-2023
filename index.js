@@ -14,6 +14,7 @@ const User = require('./models/user')
 const Events = require('./models/events')
 const Weeklies = require('./models/weeklies')
 const Artist = require('./models/artist')
+const Links = require('./models/links')
 
 dotenv.config()
 
@@ -76,6 +77,16 @@ app.get('/getArtists', (req, res) => {
     })
 })
 
+app.get('/getLinks', (req, res) => {
+    Links.find({}, (err, result) => {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(result)
+        }
+    })
+})
+
 app.get('/login', (req, res) => {
     res.render('login')
 })
@@ -95,6 +106,12 @@ app.get('/weekly', isLoggedIn, (req, res) => {
 app.get('/artist', isLoggedIn, (req, res) => {
     Artist.find({}, (err, artist) => {
         res.render('artist', { artist: artist })
+    })
+})
+
+app.get('/links', isLoggedIn, (req, res) => {
+    Links.find({}, (err, links) => {
+        res.render('links', { links: links })
     })
 })
 
@@ -149,6 +166,18 @@ app.post('/artist', async (req, res) => {
         res.redirect('/artist')
     }
 })
+
+// app.post('/links', async (req, res) => {
+//     const links = new Links({
+//         link: req.body.link
+//     })
+//     try {
+//         await links.save()
+//         res.redirect('/links')
+//     } catch (err) {
+//         res.redirect('/links')
+//     }
+// })
 
 //UPDATE
 app.route('/list/edit/:id')
@@ -211,6 +240,21 @@ app.route('/artist/edit/:id')
         Artist.findByIdAndUpdate(id, { name: req.body.name }, (err) => {
             if (err) return res.send(500, err)
             res.redirect('/artist')
+        })
+    })
+
+app.route('/links/edit/:id')
+    .get((req, res) => {
+        const id = req.params.id
+        Links.find({}, (err, links) => {
+            res.render('linksEdit', { links: links, linksId: id })
+        })
+    })
+    .post((req, res) => {
+        const id = req.params.id
+        Links.findByIdAndUpdate(id, { link: req.body.link }, (err) => {
+            if (err) return res.send(500, err)
+            res.redirect('/links')
         })
     })
 

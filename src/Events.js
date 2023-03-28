@@ -7,7 +7,6 @@ function Events({ allEvents }) {
     // const todayFormat = today.toDateString()
 
     if (allEvents && allEvents.length) {
-        console.log(allEvents)
         eventList = allEvents.map((event) => {
             let eventDate = new Date(event.date)
             let dateFormat = new Date(event.date).toDateString()

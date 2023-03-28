@@ -1,7 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Nav() {
+    const [links, setLinks] = useState()
+    let link
+
+    useEffect(() => {
+        const url = '/getLinks'
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url)
+                const data = await response.json()
+                setLinks(data)
+            } catch (error) {
+                console.log('error', error)
+            }
+        }
+        fetchData()
+    }, [])
+
+    if (links) {
+        link = links[0].link
+    }
+
     return (
         <>
             <div className="nav">
@@ -19,7 +40,7 @@ function Nav() {
                     </a>
                     <a
                         className="nav-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSeqpnBj-2NWH8O7qhtB4yHeqymPREau7xhTAKltSD75MIfFSA/viewform?usp=sf_link"
+                        href={link}
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -32,3 +53,5 @@ function Nav() {
 }
 
 export default Nav
+
+//https://docs.google.com/forms/d/e/1FAIpQLSeqpnBj-2NWH8O7qhtB4yHeqymPREau7xhTAKltSD75MIfFSA/viewform?usp=sf_link

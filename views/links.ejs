@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./static/stylesheets/style.css" type="text/css">
+  </head>
+  <body>
+    <%- include('nav'); -%>
+    <div class="main-container">
+      
+        <div class="artist-container">
+          <h1>Links</h1>
+          <!-- <form class="list-header" action="/links" method="post">
+            <input class="eventInput" type="text" name="link" placeholder="Cosmic Outpost Vendor Form">
+            <button type="submit" disabled style="display: none;" aria-hidden="true"></button>
+            <button type="submit" name="button" class="submitButton">submit</button>
+          </form> -->
+          <div class="all-artists">
+            <% links.forEach(details => { %>
+              <ul class="listEntry">
+                <li class="name"><%= details.link %><br /></li>
+                <a href="/links/edit/<%= details._id %>" class="edit">edit /</a>
+              </ul>
+            <% }) %>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
