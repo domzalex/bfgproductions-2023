@@ -19,7 +19,7 @@ function Nav() {
                     </a>
                     <a
                         className="nav-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfFY4qg3rcyOHVytOT6pV8PDyJKqiI_oPU2cEym8qYmDKVfdA/viewform?usp=sf_link"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSeqpnBj-2NWH8O7qhtB4yHeqymPREau7xhTAKltSD75MIfFSA/viewform?usp=sf_link"
                         target="_blank"
                         rel="noreferrer"
                     >
