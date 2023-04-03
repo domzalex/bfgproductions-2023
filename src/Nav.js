@@ -40,11 +40,19 @@ function Nav() {
                     </a>
                     <a
                         className="nav-link"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSd8bJ1jqHwniyH7-QUuh7yFXE9LtY3IZMZWdxC5AznLpRMoPg/viewform?usp=sf_link"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        B.F.G. Food Truck Survey
+                    </a>
+                    <a
+                        className="nav-link"
                         href={link}
                         target="_blank"
                         rel="noreferrer"
                     >
-                        B.F.G. Vendor Survey
+                        Cosmic Outpost Survey
                     </a>
                 </ul>
             </div>

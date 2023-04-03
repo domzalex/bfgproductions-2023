@@ -327,7 +327,7 @@
         display: none;
     }
     .nav-link {
-        font-size: 0.9em;
+        font-size: 0.7em;
         margin: 0;
     }
     .nav-link::after,
@@ -417,6 +417,9 @@
         display: flex;
         flex-direction: column;
     }
+    .weekdate-name {
+        font-size: 1em !important;
+    }
     .weekly-name-date {
         width: 100%;
         display: flex;
@@ -424,10 +427,10 @@
         order: 1;
     }
     .weekly-event-list h1 {
-        font-size: 0.8em;
+        font-size: 0.5em;
     }
     .weekly-event-list ul li {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
     .weekly-name {
         width: 75%;
