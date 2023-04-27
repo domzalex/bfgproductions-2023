@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import Hero from './Hero'
 import EventContainer from './EventContainer'
+import Services from './Services'
+import Partners from './Partners'
 
 function App() {
     const [events, setEvents] = useState()
@@ -38,6 +40,8 @@ function App() {
         <>
             <Hero />
             <EventContainer weekly={weekly} events={events} />
+            <Services />
+            <Partners />
         </>
     )
 }

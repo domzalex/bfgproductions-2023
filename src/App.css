@@ -313,6 +313,54 @@
     text-align: right;
 }
 
+
+
+
+/***************************/
+/**    SERVICES STYLES    **/
+/***************************/
+
+
+.home-services {
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* gap: 20px; */
+    border-top: solid 1px black;
+}
+.service-grid-item {
+    height: 300px;
+    margin: 10px;
+    background-color: white;
+}
+
+
+
+/***************************/
+/**    PARTNERS STYLES    **/
+/***************************/
+
+
+.partners-banner {
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: solid 1px black;
+}
+
+.partners-grid-item {
+    opacity: 0.5;
+    height: 200px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.partners-grid-item img {
+    height: 200px;
+}
+.partners-grid-item:hover {
+    opacity: 1;
+}
+
 @media only screen and (max-width: 900px) {
     .nav {
         position: absolute;
