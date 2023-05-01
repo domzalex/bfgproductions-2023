@@ -313,9 +313,6 @@
     text-align: right;
 }
 
-
-
-
 /***************************/
 /**    SERVICES STYLES    **/
 /***************************/
@@ -362,10 +359,7 @@
 .services-title {
     width: 300px;
     margin: auto;
-    
 }
-
-
 
 /***************************/
 /**    PARTNERS STYLES    **/
@@ -394,10 +388,6 @@
     opacity: 1;
 }
 
-
-
-
-
 /***************************/
 /**     STAFF STYLES      **/
 /***************************/
@@ -417,15 +407,26 @@
     border-radius: 15px;
     width: 400px;
     height: 600px;
-    transform: scale(1.01);
+    transform: scale(0.8);
 }
 .staff-image {
     width: 400px;
     height: 650px;
-    background-image: url('./img/alex.jpg');
     background-size: contain;
     background-position: center;
     transition: 0.75s ease;
+}
+.dan {
+    background-image: url('./img/dan.jpg');
+}
+.chad {
+    background-image: url('./img/alex.jpg');
+}
+.alex {
+    background-image: url('./img/alex.jpg');
+}
+.haleigh {
+    background-image: url('./img/haleigh.jpg');
 }
 .staff-card:hover .staff-image {
     opacity: 0.5;
@@ -447,7 +448,6 @@
     transform: translateY(50%);
     opacity: 1;
 }
-
 
 @media only screen and (max-width: 900px) {
     .nav {
