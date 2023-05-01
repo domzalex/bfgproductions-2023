@@ -320,18 +320,49 @@
 /**    SERVICES STYLES    **/
 /***************************/
 
-
+.services-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.services-main-title,
+.partners-container h1 {
+    text-align: center;
+    height: 3em;
+    font-size: 3em;
+    line-height: 3em;
+    text-decoration: underline;
+}
 .home-services {
     background-color: black;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* gap: 20px; */
+    gap: 1px;
     border-top: solid 1px black;
+    border-bottom: solid 1px black;
 }
 .service-grid-item {
-    height: 300px;
-    margin: 10px;
+    height: auto;
     background-color: white;
+    font-size: 1.25em;
+    padding: 2em;
+    color: black;
+    text-decoration: none;
+}
+.service-grid-item:hover {
+    text-decoration: underline;
+}
+.service-grid-item img {
+    width: 200px;
+}
+.services-inner {
+    display: flex;
+    align-items: center;
+}
+.services-title {
+    width: 300px;
+    margin: auto;
+    
 }
 
 
@@ -340,12 +371,14 @@
 /**    PARTNERS STYLES    **/
 /***************************/
 
-
-.partners-banner {
+.partners-container {
     background-color: black;
+    color: white;
+}
+.partners-banner {
+    padding: 2em 0;
     display: flex;
     justify-content: space-evenly;
-    border-top: solid 1px black;
 }
 
 .partners-grid-item {
@@ -360,6 +393,61 @@
 .partners-grid-item:hover {
     opacity: 1;
 }
+
+
+
+
+
+/***************************/
+/**     STAFF STYLES      **/
+/***************************/
+
+.staff-container {
+    background-color: black;
+    width: 100vw;
+    height: calc(100vh - 56px);
+    margin-top: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.staff-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 400px;
+    height: 600px;
+    transform: scale(1.01);
+}
+.staff-image {
+    width: 400px;
+    height: 650px;
+    background-image: url('./img/alex.jpg');
+    background-size: contain;
+    background-position: center;
+    transition: 0.75s ease;
+}
+.staff-card:hover .staff-image {
+    opacity: 0.5;
+    transform: translateY(-50px);
+}
+.staff-card-info {
+    position: absolute;
+    width: 100%;
+    padding: 2em 0;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    color: white;
+    opacity: 0;
+    transition: 1s ease;
+}
+.staff-card:hover .staff-card-info {
+    bottom: 300px;
+    transform: translateY(50%);
+    opacity: 1;
+}
+
 
 @media only screen and (max-width: 900px) {
     .nav {

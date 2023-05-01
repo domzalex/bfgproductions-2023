@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Nav() {
-    const [links, setLinks] = useState()
-    let link
+    // const [links, setLinks] = useState()
+    // let link
 
-    useEffect(() => {
-        const url = '/getLinks'
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url)
-                const data = await response.json()
-                setLinks(data)
-            } catch (error) {
-                console.log('error', error)
-            }
-        }
-        fetchData()
-    }, [])
+    // useEffect(() => {
+    //     const url = '/getLinks'
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await fetch(url)
+    //             const data = await response.json()
+    //             setLinks(data)
+    //         } catch (error) {
+    //             console.log('error', error)
+    //         }
+    //     }
+    //     fetchData()
+    // }, [])
 
-    if (links) {
-        link = links[0].link
-    }
+    // if (links) {
+    //     link = links[0].link
+    // }
 
     return (
         <>
@@ -29,32 +30,11 @@ function Nav() {
                 <Link className="home-link" to="/">
                     B.F.G. Productions
                 </Link>
-                <ul className="nav-link-group">
-                    <a
-                        className="nav-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfpmlHkx2qXkvwKM0JOvq80YkGUkYEnzUPt1yiLelrndY3yMw/viewform?usp=sf_link"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Join B.F.G.
-                    </a>
-                    <a
-                        className="nav-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSd8bJ1jqHwniyH7-QUuh7yFXE9LtY3IZMZWdxC5AznLpRMoPg/viewform?usp=sf_link"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        B.F.G. Food Truck Survey
-                    </a>
-                    <a
-                        className="nav-link"
-                        href={link}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Cosmic Outpost Survey
-                    </a>
-                </ul>
+                {/* <ul className="nav-link-group">
+                    <Link className="nav-link" to="/staff">
+                        The B.F.G. Team
+                    </Link>
+                </ul> */}
             </div>
         </>
     )

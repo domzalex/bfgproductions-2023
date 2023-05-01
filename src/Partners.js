@@ -6,7 +6,7 @@ import indio from './img/indio_logo.png'
 
 function Partners() {
     return (
-        <>
+        <div className='partners-container'>
             <h1>B.F.G. Proudly Partners With</h1>
             <div className='partners-banner'>
                 <a className="partners-grid-item" target="_blank" rel="noreferrer" href="https://www.spiritsusa.com">
@@ -22,7 +22,7 @@ function Partners() {
                     <img src={wrights} alt="Wright's On The Green logo" />
                 </a>
             </div>
-        </>
+        </div>
     )
 }
 
