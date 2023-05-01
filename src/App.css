@@ -130,6 +130,7 @@
     overflow: hidden;
 }
 .inner-event-container {
+    height: calc(70vh - 70px);
     width: 200vw;
     display: flex;
     align-items: center;
@@ -181,9 +182,6 @@
     justify-content: center;
     background-color: black;
     color: white;
-}
-.inner-event-container {
-    height: calc(70vh - 70px);
 }
 .weekly-list {
     position: relative;
@@ -321,6 +319,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-top: solid 1px black;
 }
 .services-main-title,
 .partners-container h1 {
@@ -449,6 +448,47 @@
     opacity: 1;
 }
 
+@media only screen and (max-width: 1200px) {
+    .services-main-title,
+    .partners-container h1 {
+        text-align: center;
+        height: 2em;
+        font-size: 2em;
+        line-height: 2em;
+        text-decoration: underline;
+    }
+    .home-services {
+        background-color: black;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        border-top: solid 1px black;
+        border-bottom: solid 1px black;
+    }
+    .service-grid-item {
+        height: auto;
+        background-color: white;
+        font-size: 1em;
+        padding: 2em;
+        color: black;
+        text-decoration: none;
+    }
+    .service-grid-item:hover {
+        text-decoration: underline;
+    }
+    .service-grid-item img {
+        width: 100px;
+    }
+    .services-inner {
+        display: flex;
+        align-items: center;
+    }
+    .services-title {
+        width: 240px;
+        margin: auto;
+    }
+}
+
 @media only screen and (max-width: 900px) {
     .nav {
         position: absolute;
@@ -460,7 +500,7 @@
         justify-content: space-between;
     }
     .home-link {
-        display: none;
+        display: flex;
     }
     .nav-link {
         font-size: 0.7em;
@@ -544,7 +584,7 @@
     }
 
     .weekly-events {
-        height: calc(80vh - 40px);
+        height: calc(70vh - 40px);
     }
     .weekly-header {
         font-size: 0.8em;
@@ -582,8 +622,13 @@
         text-align: left;
     }
 
+    .inner-event-container {
+        height: calc(70vh - 50px);
+        margin-top: 5px;
+    }
+
     .events-container {
-        height: calc(80vh - 40px);
+        height: calc(70vh - 40px);
     }
     .event {
         flex-direction: column;
@@ -603,5 +648,75 @@
     .event-location {
         width: 100%;
         text-align: left;
+    }
+
+    .partners-container {
+        background-color: black;
+        color: white;
+        padding-top: 2em;
+    }
+    .partners-banner {
+        padding: 1em 0;
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .partners-grid-item {
+        opacity: 0.5;
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+    }
+    .partners-grid-item img {
+        width: 35vw;
+        height: 35vw;
+    }
+    .partners-grid-item:hover {
+        opacity: 0.5;
+    }
+
+    .home-services {
+        background-color: black;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1px;
+        border-top: solid 1px black;
+        border-bottom: solid 1px black;
+    }
+    .service-grid-item {
+        height: auto;
+        width: 100vw;
+        background-color: white;
+        font-size: 1em;
+        padding: 2em 1em;
+        color: black;
+        text-decoration: none;
+    }
+    .service-grid-item:hover {
+        text-decoration: underline;
+    }
+    .service-grid-item img {
+        width: 75px;
+    }
+    .services-inner {
+        display: flex;
+        align-items: center;
+    }
+    .services-title {
+        width: 217px;
+        margin: auto;
+    }
+
+    .services-main-title,
+    .partners-container h1 {
+        text-align: center;
+        height: 3em;
+        font-size: 1.5em;
+        line-height: 3em;
+        text-decoration: underline;
     }
 }
