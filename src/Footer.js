@@ -27,8 +27,8 @@ function Footer() {
                 <a className="phone" href="tel:+4706601276">
                     +1 (470) 660-1276
                 </a>
-                <a className="email" href="mailto:info@bfgproductionsatl.com">
-                    info@bfgproductionsatl.com
+                <a className="email" href="mailto:dan@bfgproductionsatl.com">
+                    dan@bfgproductionsatl.com
                 </a>
             </div>
             <img className="footer-img" src={bfg2} alt="bfg logo"></img>
