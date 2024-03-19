@@ -1,6 +1,6 @@
 import React from 'react'
-import foodTruck from './img/foodtruck_white.png'
-import vendorVillage from './img/vendor_white.png'
+// import foodTruck from './img/foodtruck_white.png'
+// import vendorVillage from './img/vendor_white.png'
 import musician from './img/musician_white.png'
 import dj from './img/dj_white.png'
 
@@ -27,7 +27,7 @@ function Services() {
                         </div>
                     </div>
                 </a>
-                <a className="service-grid-item" target="_blank" rel="noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSd8bJ1jqHwniyH7-QUuh7yFXE9LtY3IZMZWdxC5AznLpRMoPg/viewform?usp=sf_link">
+                {/* <a className="service-grid-item" target="_blank" rel="noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSd8bJ1jqHwniyH7-QUuh7yFXE9LtY3IZMZWdxC5AznLpRMoPg/viewform?usp=sf_link">
                     <div className='services-inner'>
                         <img src={foodTruck} alt="" />
                         <div className='services-title'>
@@ -44,7 +44,7 @@ function Services() {
                             <p>Sign up for the Vendor Village</p>
                         </div>
                     </div>
-                </a>
+                </a> */}
             </div>
         </div>
     )

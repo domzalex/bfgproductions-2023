@@ -758,19 +758,9 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 2em;
+        gap: 3em;
     }
     .license-sub > div {
-        position: absolute;
-        top: 15%;
-        left: 15%;
-        width: 70%;
-        height: 70%;
-        background-color: rgba(255,255,255,0.05);
-        border: solid 1px rgb(255,255,255,0.2);
-        border-radius: 10px;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -792,6 +782,7 @@
         opacity: 0.5;
     }
     .license img {
-        opacity: 0.35;
+        width: 70vw;
+        max-width: 300px;
     }
 }
