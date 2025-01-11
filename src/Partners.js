@@ -1,6 +1,10 @@
 import React from 'react'
-import wrights from './img/wrights_logo.png'
-import indio from './img/indio_logo.png'
+import cherryst from './img/partner-logos/cherryst.png'
+import dicks from './img/partner-logos/dicks.jpg'
+import freedomSmall from './img/partner-logos/freedom-small.jpeg'
+import hammerhead from './img/partner-logos/hammerhead.png'
+import indio from './img/partner-logos/indio.png'
+import tobbSmall from './img/partner-logos/tobb-small.jpeg'
 
 function Partners() {
     return (
@@ -11,17 +15,49 @@ function Partners() {
                     className="partners-grid-item"
                     target="_blank"
                     rel="noreferrer"
-                    href="https://www.indiobrewing.com"
+                    href="https://cherrystreetbrewing.com"
                 >
-                    <img src={indio} alt="Indio Brewing logo" />
+                    <img src={cherryst} alt="" />
                 </a>
                 <a
                     className="partners-grid-item"
                     target="_blank"
                     rel="noreferrer"
-                    href="https://www.facebook.com/Wrightsfishandchips/"
+                    href="https://dickslastresort.com"
                 >
-                    <img src={wrights} alt="Wright's On The Green logo" />
+                    <img src={dicks} alt="" />
+                </a>
+                <a
+                    className="partners-grid-item"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.freedombrewandshine.com"
+                >
+                    <img src={freedomSmall} alt="" />
+                </a>
+                <a
+                    className="partners-grid-item"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://hammerheadfreds.com"
+                >
+                    <img src={hammerhead} alt="" />
+                </a>
+                <a
+                    className="partners-grid-item"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.indiobrewing.com"
+                >
+                    <img src={indio} alt="" />
+                </a>
+                <a
+                    className="partners-grid-item"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.facebook.com/p/Old-Beach-Bar-PCB-61550522964611/"
+                >
+                    <img src={tobbSmall} alt="" />
                 </a>
             </div>
         </div>

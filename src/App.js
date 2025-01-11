@@ -3,7 +3,7 @@ import './App.css'
 import Hero from './Hero'
 // import EventContainer from './EventContainer'
 import Services from './Services'
-// import Partners from './Partners'
+import Partners from './Partners'
 import License from './License'
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
             {/* <EventContainer weekly={weekly} events={events} /> */}
             <License />
             <Services />
-            {/* <Partners /> */}
+            <Partners />
             
         </>
     )
